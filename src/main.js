@@ -48,6 +48,8 @@ Object.keys(filters).forEach(key => {
 
 Vue.config.productionTip = false
 
+console.log("main--51", router)
+
 new Vue({
   el: '#app',
   router,

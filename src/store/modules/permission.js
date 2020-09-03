@@ -48,6 +48,7 @@ const mutations = {
 
 const actions = {
   generateRoutes({ commit }, roles) {
+    // console.log("store-modiles-permisson--51", {commit}, roles)
     return new Promise(resolve => {
       let accessedRoutes
       if (roles.includes('admin')) {
