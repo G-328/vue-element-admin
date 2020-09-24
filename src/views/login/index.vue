@@ -115,6 +115,7 @@ export default {
   watch: {
     $route: {
       handler: function(route) {
+        console.log('login--119', route)
         const query = route.query
         if (query) {
           this.redirect = query.redirect
@@ -141,6 +142,7 @@ export default {
     checkCapslock(e) {
       const { key } = e
       this.capsTooltip = key && key.length === 1 && (key >= 'A' && key <= 'Z')
+      console.log('login--146', e, this.capsTooltip)
     },
     showPwd() {
       if (this.passwordType === 'password') {
@@ -158,6 +160,7 @@ export default {
           this.loading = true
           this.$store.dispatch('user/login', this.loginForm)
             .then(() => {
+              // 记忆功能，从哪个页面退出登录的，登陆后就跳转到那个页面，并携带路由参数
               this.$router.push({ path: this.redirect || '/', query: this.otherQuery })
               this.loading = false
             })

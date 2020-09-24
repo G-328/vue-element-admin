@@ -15,18 +15,18 @@ import store from './store'
 import router from './router'
 
 import './icons' // icon
-import './permission' // permission control
+import './permission' // permission control  //权限控制
 import './utils/error-log' // error log
 
 import * as filters from './filters' // global filters
 
 /**
- * If you don't want to use mock-server
- * you want to use MockJs for mock api
- * you can execute: mockXHR()
+ * If you don't want to use mock-server  // 如果您不想使用模拟服务器
+ * you want to use MockJs for mock api  // 您需要使用MockJs来模拟api
+ * you can execute: mockXHR()  // 可以执行:mockXHR()
  *
- * Currently MockJs will be used in the production environment,
- * please remove it before going online ! ! !
+ * Currently MockJs will be used in the production environment,  // 目前MockJs将用于生产环境
+ * please remove it before going online ! ! !  // 请在上线前删除!!!
  */
 if (process.env.NODE_ENV === 'production') {
   const { mockXHR } = require('../mock')
@@ -34,13 +34,13 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 Vue.use(Element, {
-  size: Cookies.get('size') || 'medium', // set element-ui default size
+  size: Cookies.get('size') || 'medium' // set element-ui default size
   // locale: enLang // 如果使用中文，无需设置，请删除
 })
 
-// register global utility filters
-// console.log("main--42", filters)
-// console.log("main--43", Object.keys(filters))
+// register global utility filters  // 注册全局过滤器
+// console.log('main--42', filters)
+// console.log('main--43', Object.keys(filters))
 Object.keys(filters).forEach(key => {
   // console.log("main--45", filters[key])
   Vue.filter(key, filters[key])
@@ -48,7 +48,7 @@ Object.keys(filters).forEach(key => {
 
 Vue.config.productionTip = false
 
-console.log("main--51", router)
+// console.log("main--51", router)
 
 new Vue({
   el: '#app',

@@ -12,6 +12,7 @@
         @click.middle.native="!isAffix(tag)?closeSelectedTag(tag):''"
         @contextmenu.prevent.native="openMenu(tag,$event)"
       >
+      <!-- click.middle 鼠标滚轮修饰符，只有滚轮点击的时候触发 -->
         {{ tag.title }}
         <span v-if="!isAffix(tag)" class="el-icon-close" @click.prevent.stop="closeSelectedTag(tag)" />
       </router-link>
@@ -225,9 +226,9 @@ export default {
         margin-right: 15px;
       }
       &.active {
-        background-color: #42b983;
         color: #fff;
         border-color: #42b983;
+        background-color: #42b983;
         &::before {
           content: '';
           background: #fff;

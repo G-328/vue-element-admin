@@ -1,14 +1,18 @@
 <template>
   <div :class="classObj" class="app-wrapper">
-    <div v-if="device==='mobile'&&sidebar.opened" class="drawer-bg" @click="handleClickOutside" />
+    <!-- 移动端菜单栏打开时的蒙板 -->
+    <div v-if="device === 'mobile' && sidebar.opened" class="drawer-bg" @click="handleClickOutside" />
     <sidebar class="sidebar-container" />
     <div :class="{hasTagsView:needTagsView}" class="main-container">
       <div :class="{'fixed-header':fixedHeader}">
         <navbar />
         <tags-view v-if="needTagsView" />
       </div>
+      <!-- 右侧主体部分 main -->
       <app-main />
-      <right-panel v-if="showSettings">
+      <!-- 悬浮的设置按钮 -->
+      <right-panel v-if="showSettings" >
+        <!-- 点开后的详情部分 -->
         <settings />
       </right-panel>
     </div>

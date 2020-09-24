@@ -23,12 +23,14 @@ export default {
   },
   computed: {
     isExternal() {
+      // console.log('svgicon--26', this.iconClass, isExternal(this.iconClass))
       return isExternal(this.iconClass)
     },
     iconName() {
       return `#icon-${this.iconClass}`
-    },
+    },  
     svgClass() {
+      // console.log('svgicon--33', this.className)
       if (this.className) {
         return 'svg-icon ' + this.className
       } else {
