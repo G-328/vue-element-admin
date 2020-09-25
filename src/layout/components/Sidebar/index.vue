@@ -26,6 +26,9 @@ import variables from '@/styles/variables.scss'
 
 export default {
   components: { SidebarItem, Logo },
+  mounted() {
+    console.log("mounted", this.permission_routes)
+  },
   computed: {
     ...mapGetters([
       'permission_routes',
