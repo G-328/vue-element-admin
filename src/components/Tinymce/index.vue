@@ -5,7 +5,7 @@
       <editorImage color="#1890ff" class="editor-upload-btn" @successCBK="imageSuccessCBK" />
     </div>
   </div>
-</template>
+</template> 
 
 <script>
 /**
