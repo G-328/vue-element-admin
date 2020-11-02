@@ -97,19 +97,6 @@ export default {
     this.getRoles()
   },
   methods: {
-    two() {
-      console.log("object")
-      this.$notify({
-        title: 'Success',
-        dangerouslyUseHTMLString: true,
-        message: `
-            <div>Role Key: $</div>
-            <div>Role Name: $</div>
-            <div>Description: $</div>
-          `,
-        type: 'success'
-      })
-    },
     async getRoutes() {
       const res = await getRoutes()
       this.serviceRoutes = res.data
@@ -162,11 +149,7 @@ export default {
       return data
     },
     handleAddRole() {
-      // 第一级属性是深拷贝，后面的是浅拷贝
       this.role = Object.assign({}, defaultRole)
-      // this.role.routes[0].name = "df"
-      // console.log(this.role, '153')
-      // console.log(defaultRole, '154')
       if (this.$refs.tree) {
         this.$refs.tree.setCheckedNodes([])
       }
@@ -222,7 +205,6 @@ export default {
       const isEdit = this.dialogType === 'edit'
 
       const checkedKeys = this.$refs.tree.getCheckedKeys()
-      console.log(checkedKeys, '212')
       this.role.routes = this.generateTree(deepClone(this.serviceRoutes), '/', checkedKeys)
 
       if (isEdit) {

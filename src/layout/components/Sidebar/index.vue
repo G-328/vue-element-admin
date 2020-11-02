@@ -26,9 +26,6 @@ import variables from '@/styles/variables.scss'
 
 export default {
   components: { SidebarItem, Logo },
-  mounted() {
-    console.log("mounted", this.permission_routes)
-  },
   computed: {
     ...mapGetters([
       'permission_routes',
@@ -37,13 +34,10 @@ export default {
     activeMenu() {
       const route = this.$route
       const { meta, path } = route
-      console.log('layout-sidebar-index---37', route)
       // if set path, the sidebar will highlight the path you set
       if (meta.activeMenu) {
-        console.log('layout-sidebar-index---41')
         return meta.activeMenu
       }
-      console.log('layout-sidebar-index---43')
       return path
     },
     showLogo() {
@@ -53,7 +47,6 @@ export default {
       return variables
     },
     isCollapse() {
-      // console.log('layout-sidebar-index---50',!this.sidebar.opened)
       return !this.sidebar.opened
     }
   }

@@ -1,5 +1,6 @@
 // import parseTime, formatTime and set to filter
 export { parseTime, formatTime } from '@/utils'
+
 /**
  * Show plural label if time is plural number
  * @param {number} time
@@ -7,7 +8,6 @@ export { parseTime, formatTime } from '@/utils'
  * @return {string}
  */
 function pluralize(time, label) {
-  console.log("filters---11", time, label)
   if (time === 1) {
     return time + label
   }
