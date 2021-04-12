@@ -137,6 +137,7 @@ export default {
     closeSelectedTag(view) {
       this.$store.dispatch('tagsView/delView', view).then(({ visitedViews }) => {
         if (this.isActive(view)) {
+          console.log('qweqweqw=-=-=-', visitedViews)
           this.toLastView(visitedViews, view)
         }
       })
@@ -156,6 +157,7 @@ export default {
       })
     },
     toLastView(visitedViews, view) {
+      console.log('qweqweq', visitedViews, visitedViews.slice(-1), visitedViews.slice(-1)[0])
       const latestView = visitedViews.slice(-1)[0]
       if (latestView) {
         this.$router.push(latestView.fullPath)

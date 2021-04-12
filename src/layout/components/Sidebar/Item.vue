@@ -13,6 +13,7 @@ export default {
     }
   },
   render(h, context) {
+    console.log('render', h, context)
     const { icon, title } = context.props
     const vnodes = []
 
@@ -25,6 +26,7 @@ export default {
     }
 
     if (title) {
+      console.log('title', title)
       vnodes.push(<span slot='title'>{(title)}</span>)
     }
     return vnodes
